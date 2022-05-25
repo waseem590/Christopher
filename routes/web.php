@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::view('dashboard', 'dashboard');
+Route::view('account_settings', 'account_settings');
+Route::view('trade_settings', 'trade_setting');
