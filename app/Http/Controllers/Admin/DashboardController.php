@@ -15,7 +15,7 @@ class DashboardController extends Controller
 
     public function dashboard()
     {
-        return view('admin.dashboard',['user' => Auth::user()]);
+        return view('dashboard');
     }
 
     public function tradeSetting()

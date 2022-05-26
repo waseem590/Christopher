@@ -28,7 +28,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/admin/dashboard';
+    protected $redirectTo = '/dashboard';
 
     /**
      * Create a new controller instance.
@@ -43,7 +43,6 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         $input = $request->all();
-        
         $this->validate($request, [
             'email' => 'required|email',
             'password' => 'required',
@@ -51,7 +50,7 @@ class LoginController extends Controller
      
         if (auth()->attempt(array('email' => $input['email'], 'password' => $input['password']), $request->remember)) {
             toastr()->success('Successful Login');
-            return redirect()->route('admin.dashboard');
+            return redirect()->route('dashboard');
 
         } else {
             return redirect()->back()

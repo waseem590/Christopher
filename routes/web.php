@@ -15,13 +15,15 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
+Route::get('/dashboard',[DashboardController::class,'dashboard'])->name('dashboard');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/dashboard',[DashboardController::class,'dashboard'])->name('admin.dashboard');
 
 Route::get('/trade-setting',[DashboardController::class,'tradeSetting'])->name('tradeSetting');
+Route::view('account_settings', 'account_settings');
+Route::view('trade_settings', 'trade_setting');

@@ -1,4 +1,4 @@
-@include('layouts.master')
+@include('layout.master')
 
 <body>
     <div class="login-section">
@@ -33,7 +33,7 @@
                             </div>
                             <div class="form-btn">
                                 <button class="btn" type="submit"><a>Sign In</a></button>
-                                <div class="forget"><a href="#">Forgot Password?</a></div>
+                                <div class="forget"><a href="">Forgot Password?</a></div>
                             </div>
                         </form>
                     </div>
